@@ -22,9 +22,8 @@ constructor(public postsService: PostService) {
     if (form.invalid){
       return;
     }
-    const post: Post = {title : form.value.title, content : form.value.content};
-    // this.newPost = this.enteredValue;
     this.postsService.addPosts(form.value.title, form.value.content);
+    form.resetForm();
   }
 
 }
